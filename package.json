@@ -24,12 +24,12 @@
     "mips"
   ],
   "scripts": {
-    "install": "npm run libyuv:build && npm run rebuild",
+    "install": "npm run libyuv:build && npm run rebuild && tsc",
     "libyuv:build": "node scripts/libyuv-build.js",
     "libyuv:clean": "rimraf external/libyuv",
     "clean": "npm run libyuv:clean && rimraf build && rimraf dist",
     "rebuild": "node-gyp rebuild",
-    "build": "npm run libyuv:build && npm run rebuild",
+    "build": "npm run libyuv:build && npm run rebuild && tsc",
     "prepublishOnly": "npm run test",
     "ts:build": "tsc -p .",
     "ts:test": "npm run ts:build && node dist/test",
