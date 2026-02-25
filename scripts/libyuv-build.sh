@@ -37,7 +37,7 @@ else
     sed -i 's/if (JPEG_FOUND)/if (0 AND JPEG_FOUND)/' ../CMakeLists.txt
 fi
 
-cmake -DCMAKE_BUILD_TYPE="Release" -DCMAKE_POSITION_INDEPENDENT_CODE=ON -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang++ ..
+cmake -DCMAKE_BUILD_TYPE="Release" -DCMAKE_POSITION_INDEPENDENT_CODE=ON -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DCMAKE_POLICY_VERSION_MINIMUM=3.5 ..
 cmake --build . --config Release
 
 cp libyuv.a ../..
